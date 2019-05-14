@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Footer  = () => (
@@ -7,9 +7,9 @@ const Footer  = () => (
         <div className="footer-top">
             <nav className="footer-top__nav">
                 <ul>
-                    <li><NavLink to="/">Kontakt</NavLink></li>
-                    <li><NavLink to="/">Portfolio</NavLink></li>
-                    <li><NavLink to="/">Regulamin współpracy</NavLink></li>
+                    <li><Link to="/">Kontakt</Link></li>
+                    <li><Link to="/">Portfolio</Link></li>
+                    <li><Link to="/">Regulamin współpracy</Link></li>
                 </ul>
             </nav>
 
