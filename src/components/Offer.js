@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 
 const Offer = () => (
     <section className="offer">
@@ -12,7 +13,7 @@ const Offer = () => (
                 Ut enim ad minim veniam, quis 
                 nostrud exercitation:</p>
             </div>
-            <button className="btn header-box__btn">zapytaj o wycenę</button>
+            <Link to="/contact" className="btn header-box__btn">zapytaj o wycenę</Link>
         </div>
         <div>
             <div className="list-wrapper--left">
@@ -39,7 +40,7 @@ const Offer = () => (
             </div>
         </div>
 
-        <button className="btn btn-portfolio">zobacz portfolio</button>
+        <Link to="/portfolio" className="btn btn-portfolio">zobacz portfolio</Link>
     </section>
 );
 

@@ -19,9 +19,9 @@ const Navbar = () => {
     return (
         <nav>
             <ul>
-                <li><NavLink to="/">DL DESIGN</NavLink></li>
-                <li><NavLink to="/">Portfolio</NavLink></li>
-                <li><NavLink to="/">Kontakt</NavLink></li>
+                <li><NavLink exact to="/">DL DESIGN</NavLink></li>
+                <li><NavLink to="/portfolio">Portfolio</NavLink></li>
+                <li><NavLink to="/contact">Kontakt</NavLink></li>
                 <li><button onClick={handleLanguageChange}>EN | PL</button></li>
             </ul>
         </nav>

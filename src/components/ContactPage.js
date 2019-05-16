@@ -4,7 +4,7 @@ import Footer from "./Footer";
 import ContactForm from "./ContactForm";
 
 
-const Contact = () => (
+const ContactPage = () => (
 
     <>
     <header>
@@ -21,4 +21,4 @@ const Contact = () => (
 
 
 
-export default Contact;
+export default ContactPage;
