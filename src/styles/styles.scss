@@ -1,4 +1,9 @@
 @import './base/base';
+@import './base/layout';
 @import './base/settings';
 
-@import './components/main';
+@import './components/about-note';
+@import './components/navbar';
+@import './components/main-header';
+@import './components/mainPage';
+@import './components/footer';

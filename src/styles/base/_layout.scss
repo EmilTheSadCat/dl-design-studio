@@ -1,0 +1,8 @@
+.app {
+    display: grid;
+    grid-template-columns: 1fr 8fr 1fr;
+}
+
+.content-wrapper {
+    grid-column: 2 / 3;
+}

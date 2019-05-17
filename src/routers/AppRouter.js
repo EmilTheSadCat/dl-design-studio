@@ -10,7 +10,7 @@ export const history = createBrowserHistory();
 
 const AppRouter = () => (
     <Router history={history}>
-        <div>
+        <div className="content-wrapper">
             <Switch>
                 <Route exact path="/"  component={MainPage} />
                 <Route path="/portfolio"  component={PortfolioPage} />

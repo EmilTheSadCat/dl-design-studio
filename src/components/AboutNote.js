@@ -1,11 +1,15 @@
 import React from 'react';
 
 const AboutNote = () => (
-    <section>
-        <div>dl</div>
-        <div>
-            <h3>Kim jesteśmy?</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur
+    <section className="about">
+        <div className="about__left-wrapper">
+
+        <div className="about__sign noselect">dl</div>
+
+        </div>
+        <div className="about__right-wrapper">
+            <h3 className="about__title">Kim <br/> jesteśmy?</h3>
+            <p className="about__text">Lorem ipsum dolor sit amet, consectetur
             adipiscing elit, sed do eiusmod tempor incididunt 
             ut labore et dolore magna aliqua. Ut enim ad minim 
             veniam, quis nostrud exercitation ullamco laboris 

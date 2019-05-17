@@ -1,0 +1,22 @@
+.header-title {
+    color: $color-primary;
+    font-weight: 300;
+    font-size: 14.8rem;
+    text-transform: uppercase;
+    line-height: 90%;
+    z-index: 0;
+}
+
+.header-subtitle {
+    color: $gray-2;
+    font-weight: 300;
+    font-size: 3rem;
+    align-self: flex-end;
+}
+
+.header-text {
+    font-weight: 300;
+    color: $gray-2;
+    margin-top: 21rem;
+    margin-left: 4rem;
+}

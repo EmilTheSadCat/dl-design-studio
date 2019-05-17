@@ -1,0 +1,40 @@
+.about {
+
+    color: $off-white;
+    background-color: $color-primary;
+    display: flex;
+    width: 90%;
+    height: 35rem;
+    
+    &__left-wrapper {
+        position: relative;
+        flex: 1;
+    }
+    &__right-wrapper {
+        flex-basis: 60%;
+
+    }
+
+    &__sign {
+        font-size: 45rem;
+        position: absolute;
+        color: lighten($color: $color-primary, $amount: 20%);
+        bottom: -22rem;
+        left: -5rem;
+        text-transform: uppercase;
+    }
+
+
+    &__title {
+        font-size: 6rem;
+        line-height: 104%;
+        font-weight: 300;
+        margin-left: -2rem;
+        margin-top: 3rem;
+    }
+
+    &__text {
+        font-size: 1.6rem;
+        margin: 1rem 6rem 4rem 12rem;
+    }
+}

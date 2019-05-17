@@ -17,12 +17,12 @@ const Navbar = () => {
     }
 
     return (
-        <nav>
-            <ul>
-                <li><NavLink exact to="/">DL DESIGN</NavLink></li>
-                <li><NavLink to="/portfolio">Portfolio</NavLink></li>
-                <li><NavLink to="/contact">Kontakt</NavLink></li>
-                <li><button onClick={handleLanguageChange}>EN | PL</button></li>
+        <nav className="nav-bar">
+            <ul className="nav-bar__list">
+                <li className="nav-bar__item"><NavLink className="nav-bar__item--link" exact to="/">DL DESIGN</NavLink></li>
+                <li className="nav-bar__item"><NavLink className="nav-bar__item--link" to="/portfolio">Portfolio</NavLink></li>
+                <li className="nav-bar__item"><NavLink className="nav-bar__item--link" to="/contact">Kontakt</NavLink></li>
+                <li className="nav-bar__item"><button className="nav-bar__item--btn" onClick={handleLanguageChange}>EN | PL</button></li>
             </ul>
         </nav>
     )

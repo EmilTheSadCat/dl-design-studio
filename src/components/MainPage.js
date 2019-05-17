@@ -7,14 +7,14 @@ import Footer from "./Footer";
 
 const MainPage = () => (
     <>
-    <header>
         <Navbar />
-        <h1>dl design</h1>
-        <h2>studio graficzne</h2>
-        <h3>... i wszystko jasne</h3>
+    <header className="main-page__header">
+        <h1 className="header-title noselect">dl design</h1>
+        <h2 className="header-subtitle">studio graficzne</h2>
+        <h3 className="header-text">... i wszystko jasne</h3>
     </header>
 
-    <main>
+    <main className="main-page__content">
         <AboutNote />
         <Offer />
 

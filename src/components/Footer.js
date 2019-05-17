@@ -13,7 +13,11 @@ const Footer  = () => (
                 </ul>
             </nav>
 
-            <h4 className="footer-top__title">dl design</h4>
+            <h5 className="footer-top__title">
+                <a href="#">
+                    dl design
+                </a>
+            </h5>
             {/* button vs header? */}
 
         </div>
