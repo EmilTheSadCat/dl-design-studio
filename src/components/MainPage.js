@@ -15,6 +15,7 @@ const MainPage = () => (
     </header>
 
     <main className="main-page__content">
+    <div className="line"></div>
         <AboutNote />
         <Offer />
 

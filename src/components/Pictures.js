@@ -1,7 +1,6 @@
 import React from "react";
 
 const Pictures = ({category}) => {
-    // let picturesArr;
     let picturesArr = [1, 1, 1, 1, 1, 1 ];
 
     const picturesCategory = () => {

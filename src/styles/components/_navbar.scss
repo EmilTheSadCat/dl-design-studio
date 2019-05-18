@@ -8,22 +8,22 @@
     &__list {
         display: flex;
         justify-content: space-between;
-        margin: 3rem 0 2rem 2rem ;
+        margin: 2rem 2rem 2rem 2rem ;
     }
     &__item {
         
         &--link {
             font-weight: 300;
-            font-size: 1.5rem;
-        color: $gray-1;
+            font-size: 1.8rem;
+            color: $gray-1;
 
         }
     
         &--btn{
             font-weight: 300; 
             font-size: 1.5rem;
-        color: $gray-1;
-
+            color: $gray-1;
+            margin: 0;
 
         }
         

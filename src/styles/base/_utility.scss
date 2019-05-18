@@ -1,0 +1,18 @@
+.margin-top-m {
+    margin-top: 18rem;
+}
+.margin-top-s {
+    margin-top: 10rem;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-primary;
+
+    & > a {
+        text-decoration: none;
+        color: $off-white;
+    }
+}

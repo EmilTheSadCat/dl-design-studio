@@ -3,7 +3,7 @@
 .main-page {
 
     &__header {
-        margin-top: 75.6px;
+        margin-top: 18rem;
         height: 100vh;
         width: 100%;
         display: flex;
@@ -14,4 +14,14 @@
         height: min-content;
         width: 100%;
     }
+}
+
+.line {
+    position: absolute;
+    left: 50%;
+    height: 150rem;
+    // color: $color-primary;
+    border-left: 4px dotted $color-primary;
+    z-index: -1;
+    
 }

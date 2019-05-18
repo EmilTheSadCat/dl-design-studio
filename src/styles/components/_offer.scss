@@ -1,0 +1,58 @@
+.offer {
+    width: 100%;
+    height: min-content;
+    &__header-box {
+        // background-color: $gray-1;
+        width: 90%;
+        height: 40rem;
+        margin-left: 5rem;
+        display: grid;
+        grid-template: 2.5fr .6fr / 2.5fr 1fr; 
+    }
+}
+
+.header-box {
+
+    background-color: $color-primary;
+    color: $off-white;
+    &__title {
+        font-weight: 400;
+        font-size: 10.5rem;
+        margin-left: 2rem;
+    }
+
+    &__text {
+        font-size: 1.8rem;
+        margin-left: 8rem;
+    }
+
+    &__btn {
+        background-color: $color-primary;
+        grid-column: 2 / 3;
+        grid-row: 2 / 3;
+    }
+}
+
+.list-container {
+    display: flex;
+    margin-top: -6rem;
+    line-height: 5rem;
+    color: $color-primary;
+}
+
+.list-wrapper--right {
+    
+}
+.list-wrapper--left {
+    text-align: right;
+    margin-right: 4rem;
+    margin-left: 30.6%;
+    margin-top: 2.6rem;
+}
+
+.btn-portfolio {
+    width: 25rem;
+    height: 7rem;
+    margin-left: auto;
+    margin-right: auto;
+}
