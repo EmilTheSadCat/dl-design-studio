@@ -11,23 +11,23 @@ const Pictures = ({category}) => {
             case "category2":
                 picturesArr = [2, 2, 2, 2, 2, 2]
             case 'category3':
-                return <p className="slide-in">Krowa 3</p>
+                // return <p className="slide-in">Krowa 3</p>
             case 'category4':
-                return <p className="slide-in">Makko 4</p>
+                // return <p className="slide-in">Makko 4</p>
             case 'category5':
-                return <p className="slide-in">piesong 5</p>
-            
+                // return <p className="slide-in">piesong 5</p>
+             
         }
     };
     return (
-        <div>
+        <div className="gallery__pictures margin-top-xs">
             {picturesCategory()}
-            <picture><img src={`./images/photo_${picturesArr[0]}.jpg`} /></picture>
-            <picture><img src={`./images/photo_${picturesArr[1]}.jpg`} /></picture>
-            <picture><img src={`./images/photo_${picturesArr[2]}.jpg`} /></picture>
-            <picture><img src={`./images/photo_${picturesArr[3]}.jpg`} /></picture>
-            <picture><img src={`./images/photo_${picturesArr[4]}.jpg`} /></picture>
-            <picture><img src={`./images/photo_${picturesArr[5]}.jpg`} /></picture>
+            <picture className="picture"><img src={`./images/photo_${picturesArr[0]}.jpg`} /></picture>
+            <picture className="picture"><img src={`./images/photo_${picturesArr[1]}.jpg`} /></picture>
+            <picture className="picture"><img src={`./images/photo_${picturesArr[2]}.jpg`} /></picture>
+            <picture className="picture"><img src={`./images/photo_${picturesArr[3]}.jpg`} /></picture>
+            <picture className="picture"><img src={`./images/photo_${picturesArr[4]}.jpg`} /></picture>
+            <picture className="picture"><img src={`./images/photo_${picturesArr[5]}.jpg`} /></picture>
         </div>
     )
 };

@@ -4,15 +4,25 @@
 .margin-top-s {
     margin-top: 10rem;
 }
+.margin-top-xs {
+    margin-top: 5rem;
+}
 
 .btn {
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: $color-primary;
+    text-decoration: none;
+    color: $off-white;
+    transition: all .150s ease;
 
-    & > a {
-        text-decoration: none;
-        color: $off-white;
+    &:hover {
+        background-color: darken($color: $color-primary, $amount: 8%)
+    }
+
+    &:active, :focus {
+        background-color: lighten($color: $color-primary, $amount: 10%);
     }
 }
+

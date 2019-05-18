@@ -12,10 +12,9 @@ const Gallery = () => {
             }
     }
     return (
-        <div>
-            <h2>I'm a gallery!</h2>
-            <div>
-                <ul>
+        <div className="gallery">
+            <div className="gallery__picker margin-top-xs">
+                <ul className="picker__list">
                     <li><button id="category1" onClick={handlePick}>Skład</button></li>
                     <li><button id="category2" onClick={handlePick}>Okładki</button></li>
                     <li><button id="category3" className="active" onClick={handlePick}>Logotyp</button></li>

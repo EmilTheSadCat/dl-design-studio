@@ -13,13 +13,13 @@ const PortfolioPage = () => {
         <header>
             <Navbar />
         </header>
-        <main>
-        <section>
-            <div>
-                <h1>dl design</h1>
-                <h3>Portfolio</h3>
+        <main className='portfolio'>
+        <section className='portfolio__info'>
+            <div className="portfolio-titles">
+                <h1 className="portfolio-titles__title">dl design</h1>
+                <h3 className="portfolio-titles__subtitle">Portfolio</h3>
             </div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            <p className="portfolio__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
             Labore molestiae tempora, autem sint quis ex aliquam corporis 
             adipisci nisi non commodi saepe accusamus blanditiis dicta 
             officiis inventore consequuntur facilis fugit!</p>

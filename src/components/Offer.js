@@ -13,10 +13,10 @@ const Offer = () => (
                 Ut enim ad minim veniam, quis 
                 nostrud exercitation:</p>
             </div>
-            <div className="btn header-box__btn">
-                <Link to="/contact" >zapytaj o wycenę</Link>
+         
+                <Link className="btn header-box__btn" to="/contact" >zapytaj o wycenę</Link>
 
-            </div>
+
         </div>
         <div className="list-container">
             <div className="list-wrapper--left">
@@ -42,10 +42,10 @@ const Offer = () => (
                 </ul>
             </div>
         </div>
-        <div className="btn btn-portfolio margin-top-s">
-            <Link to="/portfolio" >zobacz portfolio</Link>
+        {/* <div className="btn btn-portfolio margin-top-s"> */}
+            <Link  className="btn btn-portfolio margin-top-s" to="/portfolio" >zobacz portfolio</Link>
 
-        </div>
+        {/* </div> */}
     </section>
 );
 

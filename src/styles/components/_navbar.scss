@@ -16,6 +16,11 @@
             font-weight: 300;
             font-size: 1.8rem;
             color: $gray-1;
+            transition: color .3s ease;
+
+            &:hover {
+                color: $color-primary;
+            }
 
         }
     
