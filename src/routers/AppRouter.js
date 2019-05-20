@@ -5,11 +5,13 @@ import NotFoundPage from "../components/NotFoundPage";
 import MainPage from "../components/MainPage";
 import ContactPage from "../components/ContactPage";
 import PortfolioPage from "../components/PortfolioPage";
+import ScrollToTop from "../components/ScrollToTop";
 
 export const history = createBrowserHistory();
 
 const AppRouter = () => (
     <Router history={history}>
+        <ScrollToTop>
         <div className="content-wrapper">
             <Switch>
                 <Route exact path="/"  component={MainPage} />
@@ -20,6 +22,7 @@ const AppRouter = () => (
 
             </Switch>
         </div>
+        </ScrollToTop>
     </Router>
 );
 

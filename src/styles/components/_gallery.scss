@@ -19,8 +19,9 @@
     &__list {
         display: flex;
 
-        &li {
+        & li button {
             color: $gray-2;
+            
         }
     }
 }
@@ -36,3 +37,22 @@
     width: 100%;
     height: 100%;
 }
+
+.gallery-transition-enter {
+    opacity: 0 !important;
+    // background-color: red;
+  }
+  .gallery-transition-enter-active {
+    transition: opacity 200ms;
+    opacity: 1;
+  }
+
+  .gallery-transition-exit {
+
+    // transition: opacity 200ms;
+    opacity: 1;
+  }
+  .gallery-transition-exit-active {
+    opacity: 0;
+    transition: opacity 200ms;
+  }

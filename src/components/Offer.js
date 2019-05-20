@@ -1,7 +1,11 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-const Offer = () => (
+const Offer = () => {
+    // handleCklick = () => {
+    //     console.log('clicked!')
+    // }
+    return (
     <section className="offer margin-top-m">
         <div className="offer__header-box">
             <div className="header-box">
@@ -43,11 +47,14 @@ const Offer = () => (
             </div>
         </div>
         {/* <div className="btn btn-portfolio margin-top-s"> */}
-            <Link  className="btn btn-portfolio margin-top-s" to="/portfolio" >zobacz portfolio</Link>
+            <Link className="btn btn-portfolio margin-top-s" to="/portfolio" >zobacz portfolio</Link>
 
         {/* </div> */}
     </section>
-);
+
+
+    )
+    };
 
 
 export default Offer;

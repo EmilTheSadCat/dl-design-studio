@@ -1,14 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Pictures from "./Pictures";
+import { CSSTransition } from "react-transition-group";
 
 const Gallery = () => {
     const [category, setCategory] = useState({ category: 'category3'})
+    const [inProp, setInProp] = useState(true);
+    // let previousCategory;
     const handlePick = ({target}) => {
         if(category.category === target.id) return
-            else {
+        else {
+            setInProp(false);
+
+            setTimeout(() => {
+                setInProp(true);
+                
+
+                setTimeout(() => {
+                    setCategory({category: target.id})
+                    target.classList.add('active');
+                    
+                },200);
+            }, 5);
+                console.log(inProp);
                 document.getElementById(category.category).classList.remove('active');
-                setCategory({category: target.id})
-                target.classList.add('active');
+                
             }
     }
     return (
@@ -22,7 +37,16 @@ const Gallery = () => {
                     <li><button id="category5" onClick={handlePick}>Ilustracje</button></li>
                 </ul>
             </div>
-            <Pictures category={category}/>
+            <CSSTransition
+            in={inProp}
+            timeout={300}
+            classNames="gallery-transition"
+            // onEnter={()=> console.log('enter')}
+            // onExit={() => setInProp(false)}
+            >
+            
+            <Pictures category={category} inProp={inProp}/>
+            </CSSTransition>
         </div>
     )
 };
