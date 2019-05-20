@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Formik, FormikProps, Form, Field, ErrorMessage } from 'formik';
 import axios from "axios";
 import * as Yup from "yup";
@@ -26,9 +26,12 @@ function Checkbox(props) {
     return (
       <Field name={props.name}>
         {({ field, form }) => (
-          <label>
+          <div className="button-holder">
+          <div className="tag">{props.value}</div>
             <input
               type="checkbox"
+              className="checkbox"
+              id={props.id}
               {...props}
               checked={field.value.includes(props.value)}
               onChange={() => {
@@ -43,8 +46,9 @@ function Checkbox(props) {
                 }
               }}
             />
-            {props.value}
+          <label for={props.id}>
           </label>
+          </div>
         )}
       </Field>
     );
@@ -54,6 +58,11 @@ function Checkbox(props) {
 
 const ContactForm = () => {
   const [isError, setIsError] = useState(false);
+
+  const [isEmailError, setIsEmailError] = useState(false);
+  const [isNameError, setIsNameError] = useState(false);
+  const [isNumberError, setIsNumberError] = useState(false);
+  const [isMessageError, setIsMessageError] = useState(false);
   
   const handleSubmit = (values, {
     setSubmitting,
@@ -83,17 +92,32 @@ const ContactForm = () => {
     return;
   };
 
-  const handleError = (e) => {
-    // TODO: adding class based on e value to the invalid elements. change border to red or sth.
-    console.log('I am an error.');
-    // console.log(e);
+  useEffect(() => {
+    isEmailError ? addErrorClass('email') : removeErrorClass('email');
+    isNameError ? addErrorClass('name') : removeErrorClass('name');
+    isNumberError ? addErrorClass('phone-number') : removeErrorClass('phone-number');
+    isMessageError ? addErrorClass('message') : removeErrorClass('message');
+  })
+
+  const addErrorClass = (e) => {
+   
+    let element = document.querySelector(`.input__${e}`);
+    element.classList.add('err');
   }
+
+  const removeErrorClass = (e) => {
+   
+    let element = document.querySelector(`.input__${e}`);
+    element.classList.remove('err');
+  }
+
+  
 
   return (
     <Formik
       initialValues={{
         name: '',
-        content: '',
+        message: '',
         email: '',
         phoneNumber: '',
         category: []
@@ -103,47 +127,66 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       render={formProps => {
         return (
-          <Form>
-            <Checkbox name="category" value="logo" />
-            <Checkbox name="category" value="okładka" />
-            <Field
-              type="text"
-              name="name"
-              placeholder="Imię"
-            />
-            {formProps.errors.name && handleError('name')}
-            <ErrorMessage name="name" />
+          <Form className="form-wrapper margin-top-s">
+            <div className="form__checkboxes">
+            <Checkbox name="category" value="grafika wydawnicza" id="checkbox-1" />
+            <Checkbox name="category" value="okładka" id="checkbox-2"/> 
+            <Checkbox name="category" value="layout" id="checkbox-3"/>
+            <Checkbox name="category" value="skład" id="checkbox-4"/>
+            <Checkbox name="category" value="ilustracja" id="checkbox-5"/>
+            <Checkbox name="category" value="fotografia" id="checkbox-6"/>
+            <Checkbox name="category" value="web design" id="checkbox-7"/>
+            </div>
+            <div className="form__inputs">
+            
+              <Field
+                className="input__email input"
+                type="text"
+                name="email"
+                placeholder="Email"
+              />
+              { formProps.errors.email ? setIsEmailError(true) : setIsEmailError(false) }
+              {/* <ErrorMessage component="div" name="email" className="error-message" /> */}
 
-            <Field
-              type="text"
-              name="email"
-              placeholder="Email"
-            />
-            {formProps.errors.email && handleError('email')}
-            <ErrorMessage name="email" />
+              <Field
+              className="input__name input"
+                type="text"
+                name="name"
+                placeholder="Imię"
+              />
+              {formProps.errors.name ? setIsNameError(true) : setIsNameError(false)}
+              {/* <ErrorMessage  component="div"name="name" className="error-message" /> */}
 
-            <Field
-              type="textarea"
-              name="content"
-              placeholder="W czym możemy pomóc?"
-            />
-            {formProps.errors.content && handleError('content')}
-            <ErrorMessage name="content" />
 
-            <Field
-              type="text"
-              name="phoneNumber"
-              placeholder="tel"
-            />
-            {formProps.errors.phoneNumber && handleError('phoneNumber')}
 
-            <ErrorMessage name="phoneNumber" />
+             
 
-            <button
-              type="submit"
-              disabled={formProps.isSubmitting}>
-              Submit Form
-                   </button>
+              <Field
+              className="input__phone-number input"
+                type="text"
+                name="phoneNumber"
+                placeholder="tel"
+              />
+              {/* {formProps.errors.phoneNumber && handleError('phoneNumber')} */}
+              {formProps.errors.phoneNumber ? setIsNumberError(true) : setIsNumberError(false)}
+
+              <ErrorMessage component="div" name="phoneNumber input" className="error-message" />
+
+              <Field
+                className="input__message input"
+                type="textarea"
+                name="message"
+                placeholder="W czym możemy pomóc?"
+              />
+              {formProps.errors.message ? setIsMessageError(true) : setIsMessageError(false)}
+              <ErrorMessage component="div" name="message" className="error-message" />
+
+              <button
+                type="submit"
+                disabled={formProps.isSubmitting}>
+                Submit Form
+                    </button>
+            </div>
             {isError && <p>There is something wrong with the form. Please contact us via email or call us.</p>}
           </Form>
 

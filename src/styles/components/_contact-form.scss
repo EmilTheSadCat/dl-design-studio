@@ -1,0 +1,126 @@
+// .checkbox {
+//     appearance: none;
+//     -webkit-appearance: none;
+//     background-color: #fafafa;
+//     border: 1px solid $color-primary;
+//     padding: 4px;
+//     border-radius: 4px;
+//     display: inline-block;
+//     position: relative;
+
+//     &:active, &:checked:active {
+//         box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+//     }
+// }
+
+
+label {
+	display: inline;
+}
+
+.checkbox {
+    display: none;
+}
+
+.checkbox + label {
+    transition: all .1s ease-in-out;
+    cursor: pointer;
+	background-color: $off-white;
+	border: 2px solid $color-primary-light;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+	padding: 9px;
+	border-radius: 3px;
+	display: inline-block;
+    position: relative;
+    top: 0.4rem;
+    width:1.7rem;
+    height:1.7rem;
+    // , inset 0px -15px 10px -12px rgba(0,0,0,0.05)
+}
+
+.checkbox:checked + label:hover {
+    background-color: lighten($color: $color-primary, $amount: 4%);
+    border: 2px solid lighten($color: $color-primary, $amount: 4%);
+}
+.checkbox + label:hover {
+    background-color: $color-primary-light;
+}
+
+.checkbox:checked + label {
+	background-color: $color-primary;
+	border: 2px solid $color-primary;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+}
+
+
+
+
+.tag {
+    text-align: right;
+    font-size: 1.8rem;
+    margin-right: 2rem;
+	width: 18rem;
+	position: relative;
+	display: block;
+}
+
+
+
+.button-holder {
+    display: flex;
+    // height: min-content;
+}
+
+.form-wrapper {
+    display: flex
+}
+
+.form {
+    &__checkboxes {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        top: 1rem;
+    }
+    &__inputs {
+        flex-basis: 60%;
+        margin-left: 5rem;
+        display: grid;
+        grid-template-columns: 2fr 2fr 1fr;
+        grid-template-rows: 1fr 1fr 5fr;
+        grid-template-areas: " a a x"
+                               "b c x"
+                               "d d e";
+        grid-gap: 1rem;
+    }
+}
+
+.input {
+    border: 2px solid $color-primary-light;
+    background-color: $off-white;
+    border-radius: 4px;
+    padding: .4rem;
+    &__email {
+        grid-area: a;
+    }
+    &__name {
+        grid-area: b;
+    }
+    &__phone-number {
+        grid-area: c;
+    }
+    &__message {
+        grid-area: d;
+    }
+}
+
+.error-message {
+    position: absolute;
+    top: 4rem;
+}
+.err {
+    border: 3px solid rgba(255, 32, 32, 0.3);
+    box-shadow: 0 0 4px rgba(255, 32, 32, 0.3)
+}

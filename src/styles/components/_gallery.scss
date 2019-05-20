@@ -18,9 +18,18 @@
 .picker {
     &__list {
         display: flex;
+        font-family: $font-secondary;
+        font-weight: 300;
+        transition: all .4s ease-in-out;
 
         & li button {
-            color: $gray-2;
+            color: $gray-1;
+            font-size: 2.3rem;
+            margin: 0 2rem;
+
+            &:hover {
+                color: $color-primary;
+            }
             
         }
     }

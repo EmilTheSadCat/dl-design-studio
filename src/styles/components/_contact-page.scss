@@ -1,0 +1,28 @@
+.contact {
+    color: $color-primary;
+    margin-top: 10rem;
+    &__info {
+        display: flex;
+    }
+
+
+    &__text {
+        flex: 1;
+        margin-right: 10rem;
+    }
+}
+
+.contact-titles {
+    flex-basis: 50%;
+    &__title {
+        font-size: 6rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        margin-top: -2rem;
+    }
+
+    &__subtitle {
+        font-size: 2.7rem;
+        font-weight: 300;
+    }
+}
