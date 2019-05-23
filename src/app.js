@@ -2,20 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "normalize.css/normalize.css";
 import "./styles/styles.scss";
+import { StoreProvider } from "./Store";
 
 import AppRouter from "./routers/AppRouter";
-import LoadingPage from "./components/LoadingPage";
 
-const jsx = <AppRouter />;
+const jsx = <StoreProvider>
+                <AppRouter />
+            </StoreProvider>;
 
-let hasRendered = false;
-const renderApp = () => {
-    if (!hasRendered) {
-        ReactDOM.render(jsx, document.getElementById("app"));
-        hasRendered = true;
-    }
-};
 
-ReactDOM.render(<LoadingPage />, document.getElementById("app"));
-
-renderApp();
+ReactDOM.render(jsx, document.getElementById("app"));

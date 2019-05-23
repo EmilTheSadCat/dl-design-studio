@@ -1,11 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useContext } from 'react';
 import Pictures from "./Pictures";
 import { CSSTransition } from "react-transition-group";
+
+import { Store } from "./../Store";
+import lang from "./language";
+
 
 const Gallery = () => {
     const [category, setCategory] = useState({ category: 'category3'})
     const [inProp, setInProp] = useState(true);
-    // let previousCategory;
+
+    const { state, dispatch } = useContext(Store);
+
+
     const handlePick = ({target}) => {
         if(category.category === target.id) return
         else {
@@ -30,11 +37,11 @@ const Gallery = () => {
         <div className="gallery">
             <div className="gallery__picker margin-top-xs">
                 <ul className="picker__list">
-                    <li><button id="category1" onClick={handlePick}>Skład</button></li>
-                    <li><button id="category2" onClick={handlePick}>Okładki</button></li>
-                    <li><button id="category3" className="active" onClick={handlePick}>Logotyp</button></li>
-                    <li><button id="category4" onClick={handlePick}>Identyfikacja</button></li>
-                    <li><button id="category5" onClick={handlePick}>Ilustracje</button></li>
+                    <li><button id="category1" onClick={handlePick}>{lang[state.lang]["gallery-cat-1"]}</button></li>
+                    <li><button id="category2" onClick={handlePick}>{lang[state.lang]["gallery-cat-2"]}</button></li>
+                    <li><button id="category3" className="active" onClick={handlePick}>{lang[state.lang]["gallery-cat-3"]}</button></li>
+                    <li><button id="category4" onClick={handlePick}>{lang[state.lang]["gallery-cat-4"]}</button></li>
+                    <li><button id="category5" onClick={handlePick}>{lang[state.lang]["gallery-cat-5"]}</button></li>
                 </ul>
             </div>
             <CSSTransition

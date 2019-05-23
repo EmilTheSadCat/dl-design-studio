@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Store } from "./../Store";
+import lang from "./language";
 
-const AboutNote = () => (
+const AboutNote = () => {
+
+    const { state } = useContext(Store);
+    
+    return (
     <section className="about">
         <div className="about__left-wrapper">
 
@@ -8,22 +14,13 @@ const AboutNote = () => (
 
         </div>
         <div className="about__right-wrapper">
-            <h3 className="about__title">Kim <br/> jesteśmy?</h3>
-            <p className="about__text">Lorem ipsum dolor sit amet, consectetur
-            adipiscing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua. Ut enim ad minim 
-            veniam, quis nostrud exercitation ullamco laboris 
-            nisi ut aliquip ex ea commodo consequat. Duis aute
-            irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur. 
-            Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim 
-            id est laborum</p>
+            <h3 className="about__title">{lang[state.lang]["about-title-1"]} <br/> {lang[state.lang]["about-title-2"]}</h3>
+            <p className="about__text">{lang[state.lang]["about-text"]}</p>
         </div>
         
     </section>
 
-);
+)};
 
 
 

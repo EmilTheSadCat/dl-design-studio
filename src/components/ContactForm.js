@@ -1,68 +1,39 @@
-import React, { useState, useEffect } from "react";
-import { Formik, FormikProps, Form, Field, ErrorMessage } from 'formik';
+import React, { useState, useEffect, useContext } from "react";
+import { Formik, Form, Field, ErrorMessage } from 'formik';
 import axios from "axios";
 import * as Yup from "yup";
+
+import { Store } from "./../Store";
+import lang from "./language";
+
+import { Checkbox }from "./Checkbox";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 
-// instructions and placeholder text will be variables to change 
-// depending on chosen language
-
-const SingupSchema = Yup.object().shape({
-  name: Yup.string()
-    .min(3, 'Za mało znaków!')
-    .required('Wymagane'),
-  email: Yup.string()
-    .email('Nieprawidłowy adres email')
-    .required('Wymagane'),
-  phoneNumber: Yup.string()
-    .matches(phoneRegExp, "Nieprawidłowy numer telefonu") 
-})
-
-
-
-function Checkbox(props) {
-    return (
-      <Field name={props.name}>
-        {({ field, form }) => (
-          <div className="button-holder">
-          <div className="tag">{props.value}</div>
-            <input
-              type="checkbox"
-              className="checkbox"
-              id={props.id}
-              {...props}
-              checked={field.value.includes(props.value)}
-              onChange={() => {
-                if (field.value.includes(props.value)) {
-                  const nextValue = field.value.filter(
-                    value => value !== props.value
-                  );
-                  form.setFieldValue(props.name, nextValue);
-                } else {
-                  const nextValue = field.value.concat(props.value);
-                  form.setFieldValue(props.name, nextValue);
-                }
-              }}
-            />
-          <label for={props.id}>
-          </label>
-          </div>
-        )}
-      </Field>
-    );
-  }
 
 
 
 const ContactForm = () => {
-  const [isError, setIsError] = useState(false);
+  const { state } = useContext(Store);
 
+  const [isError, setIsError] = useState(false);
   const [isEmailError, setIsEmailError] = useState(false);
   const [isNameError, setIsNameError] = useState(false);
   const [isNumberError, setIsNumberError] = useState(false);
   const [isMessageError, setIsMessageError] = useState(false);
+  
+  const SingupSchema = Yup.object().shape({
+    name: Yup.string()
+      .min(3, lang[state.lang]["contact-form-schema-name"])
+      .required(lang[state.lang]["contact-form-schema-required"]),
+    email: Yup.string()
+      .email(lang[state.lang]["contact-form-schema-mail"])
+      .required(lang[state.lang]["contact-form-schema-required"]),
+    phoneNumber: Yup.string()
+      .matches(phoneRegExp, lang[state.lang]["contact-form-schema-number"]) 
+  })
+  
   
   const handleSubmit = (values, {
     setSubmitting,
@@ -80,7 +51,7 @@ const ContactForm = () => {
       .catch(function (error) {
         console.log(error);
       });
-    alert('Form Submitted');
+    alert(lang[state.lang]["contact-form-submitted"]);
     setSubmitting(false);
     resetForm({
       name: '',
@@ -111,8 +82,6 @@ const ContactForm = () => {
     element.classList.remove('err');
   }
 
-  
-
   return (
     <Formik
       initialValues={{
@@ -129,13 +98,13 @@ const ContactForm = () => {
         return (
           <Form className="form-wrapper margin-top-s">
             <div className="form__checkboxes">
-            <Checkbox name="category" value="grafika wydawnicza" id="checkbox-1" />
-            <Checkbox name="category" value="okładka" id="checkbox-2"/> 
-            <Checkbox name="category" value="layout" id="checkbox-3"/>
-            <Checkbox name="category" value="skład" id="checkbox-4"/>
-            <Checkbox name="category" value="ilustracja" id="checkbox-5"/>
-            <Checkbox name="category" value="fotografia" id="checkbox-6"/>
-            <Checkbox name="category" value="web design" id="checkbox-7"/>
+            <Checkbox name="category" value={lang[state.lang]["contact-form-checkbox-1"]} id="checkbox-1" />
+            <Checkbox name="category" value={lang[state.lang]["contact-form-checkbox-2"]} id="checkbox-2"/> 
+            <Checkbox name="category" value={lang[state.lang]["contact-form-checkbox-3"]} id="checkbox-3"/>
+            <Checkbox name="category" value={lang[state.lang]["contact-form-checkbox-4"]} id="checkbox-4"/>
+            <Checkbox name="category" value={lang[state.lang]["contact-form-checkbox-5"]} id="checkbox-5"/>
+            <Checkbox name="category" value={lang[state.lang]["contact-form-checkbox-6"]} id="checkbox-6"/>
+            <Checkbox name="category" value={lang[state.lang]["contact-form-checkbox-7"]} id="checkbox-7"/>
             </div>
             <div className="form__inputs">
             
@@ -146,37 +115,27 @@ const ContactForm = () => {
                 placeholder="Email"
               />
               { formProps.errors.email ? setIsEmailError(true) : setIsEmailError(false) }
-              {/* <ErrorMessage component="div" name="email" className="error-message" /> */}
 
               <Field
               className="input__name input"
                 type="text"
                 name="name"
-                placeholder="Imię"
+                placeholder={lang[state.lang]["contact-form-name"]}
               />
               {formProps.errors.name ? setIsNameError(true) : setIsNameError(false)}
-              {/* <ErrorMessage  component="div"name="name" className="error-message" /> */}
-
-
-
-             
-
               <Field
               className="input__phone-number input"
                 type="text"
                 name="phoneNumber"
-                placeholder="tel"
+                placeholder={lang[state.lang]["contact-form-number"]}
               />
-              {/* {formProps.errors.phoneNumber && handleError('phoneNumber')} */}
               {formProps.errors.phoneNumber ? setIsNumberError(true) : setIsNumberError(false)}
-
               <ErrorMessage component="div" name="phoneNumber input" className="error-message" />
-
               <Field
                 className="input__message input"
                 type="textarea"
                 name="message"
-                placeholder="W czym możemy pomóc?"
+                placeholder={lang[state.lang]["contact-form-area"]}
               />
               {formProps.errors.message ? setIsMessageError(true) : setIsMessageError(false)}
               <ErrorMessage component="div" name="message" className="error-message" />
@@ -184,10 +143,10 @@ const ContactForm = () => {
               <button
                 type="submit"
                 disabled={formProps.isSubmitting}>
-                Submit Form
+                {lang[state.lang]["contact-form-submit"]}
                     </button>
             </div>
-            {isError && <p>There is something wrong with the form. Please contact us via email or call us.</p>}
+            {isError && <p>{lang[state.lang]["contact-form-error-message"]}</p>}
           </Form>
 
         );

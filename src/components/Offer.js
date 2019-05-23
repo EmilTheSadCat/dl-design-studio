@@ -1,55 +1,33 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Store } from "./../Store";
+import lang from "./language";
 import { Link } from "react-router-dom";
 
 const Offer = () => {
-    // handleCklick = () => {
-    //     console.log('clicked!')
-    // }
+
+    const { state } = useContext(Store);
+
     return (
     <section className="offer margin-top-m">
         <div className="offer__header-box">
             <div className="header-box">
-                <h3 className="header-box__title">Oferta</h3>
-                <p className="header-box__text">Lorem ipsum dolor sit amet, 
-                covnsectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt 
-                ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis 
-                nostrud exercitation:</p>
+                <h3 className="header-box__title">{lang[state.lang]["offer-title"]}</h3>
+                <p className="header-box__text">{lang[state.lang]["offer-text"]}</p>
             </div>
          
-                <Link className="btn header-box__btn" to="/contact" >zapytaj o wycenę</Link>
+                <Link className="btn header-box__btn" to="/contact">{lang[state.lang]["offer-btn-pricing"]}</Link>
 
 
         </div>
         <div className="list-container">
             <div className="list-wrapper--left">
-                <ul>
-                    <li>znak firmowy</li>
-                    <li>identyfikacja wizualna</li>
-                    <li>strona www</li>
-                    <li>witryna sklepu</li>
-                    <li>materiały reklamowe</li>
-                    <li>przygotowanie do druku</li>
-                    <li>copywriting</li>
-                </ul>
+                {lang[state.lang]["offer-list-left"]}
             </div>
             <div className="list-wrapper--right">
-                <ul>
-                    <li>grafika wydawnicza</li>
-                    <li>okładki</li>
-                    <li>layouty</li>
-                    <li>skład</li>
-                    <li>ilustracje</li>
-                    <li>fotografia</li>
-                    <li>fotografia produktu</li>
-                </ul>
+                {lang[state.lang]["offer-list-right"]}
             </div>
         </div>
-        {/* <div className="btn btn-portfolio margin-top-s"> */}
-            <Link className="btn btn-portfolio margin-top-s" to="/portfolio" >zobacz portfolio</Link>
-
-        {/* </div> */}
+            <Link className="btn btn-portfolio margin-top-s" to="/portfolio" >{lang[state.lang]["offer-btn-portfolio"]}</Link>
     </section>
 
 
