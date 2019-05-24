@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from "react";
+import ReactModal from 'react-modal';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import axios from "axios";
 import * as Yup from "yup";
@@ -6,16 +7,20 @@ import * as Yup from "yup";
 import { Store } from "./../Store";
 import lang from "./language";
 
+
 import { Checkbox }from "./Checkbox";
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
 
 
-
+ReactModal.setAppElement('#app');
 
 
 const ContactForm = () => {
   const { state } = useContext(Store);
+
+  const [showModal, setShowModal] = useState(false);
+  // setShowModal(true);
 
   const [isError, setIsError] = useState(false);
   const [isEmailError, setIsEmailError] = useState(false);
@@ -51,7 +56,7 @@ const ContactForm = () => {
       .catch(function (error) {
         console.log(error);
       });
-    alert(lang[state.lang]["contact-form-submitted"]);
+    setShowModal(true);
     setSubmitting(false);
     resetForm({
       name: '',
@@ -82,7 +87,22 @@ const ContactForm = () => {
     element.classList.remove('err');
   }
 
+ 
+
   return (
+    <>
+    
+    <ReactModal
+      isOpen={showModal}
+      className="Modal"
+      overlayClassName="Overlay">
+
+        {lang[state.lang]["contact-form-submitted"]}
+        <button onClick={() => setShowModal(false)} autoFocus
+        >x</button>
+
+    </ReactModal>
+
     <Formik
       initialValues={{
         name: '',
@@ -96,6 +116,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       render={formProps => {
         return (
+         
           <Form className="form-wrapper margin-top-s">
             <div className="form__checkboxes">
             <Checkbox name="category" value={lang[state.lang]["contact-form-checkbox-1"]} id="checkbox-1" />
@@ -133,6 +154,7 @@ const ContactForm = () => {
               <ErrorMessage component="div" name="phoneNumber input" className="error-message" />
               <Field
                 className="input__message input"
+                component="textarea"
                 type="textarea"
                 name="message"
                 placeholder={lang[state.lang]["contact-form-area"]}
@@ -141,6 +163,7 @@ const ContactForm = () => {
               <ErrorMessage component="div" name="message" className="error-message" />
 
               <button
+              className="send-btn"
                 type="submit"
                 disabled={formProps.isSubmitting}>
                 {lang[state.lang]["contact-form-submit"]}
@@ -148,10 +171,12 @@ const ContactForm = () => {
             </div>
             {isError && <p>{lang[state.lang]["contact-form-error-message"]}</p>}
           </Form>
-
         );
       }}
-    />);
+    />
+    
+</>
+    );
 
 }
 

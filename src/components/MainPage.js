@@ -4,19 +4,12 @@ import AboutNote from "./AboutNote";
 import Offer from "./Offer";
 import Footer from "./Footer";
 import language from "./language";
-import { initialLang, langReducer } from "../reducers/langReducer";
 import { Store } from "./../Store";
 
 
 const MainPage = () => {
     const {state} = useContext(Store);
     
-    // console.log(language[state.lang]["header-subtitle"]);
-    // const [state, dispatch] = useReducer(langReducer, initialLang);
-    // console.log(state);
-    // const lang = state.lang;
-    // {language[state.lang]["header-subtitle"]}
-
     return (
         <>
         {console.log(state)}

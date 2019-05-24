@@ -1,17 +1,3 @@
-// .checkbox {
-//     appearance: none;
-//     -webkit-appearance: none;
-//     background-color: #fafafa;
-//     border: 1px solid $color-primary;
-//     padding: 4px;
-//     border-radius: 4px;
-//     display: inline-block;
-//     position: relative;
-
-//     &:active, &:checked:active {
-//         box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
-//     }
-// }
 
 
 label {
@@ -68,7 +54,6 @@ label {
 
 .button-holder {
     display: flex;
-    // height: min-content;
 }
 
 .form-wrapper {
@@ -100,8 +85,11 @@ label {
 .input {
     border: 2px solid $color-primary-light;
     background-color: $off-white;
+    color: $gray-3;
+
     border-radius: 4px;
-    padding: .4rem;
+    padding: .4rem .8rem;
+    
     &__email {
         grid-area: a;
     }
@@ -113,7 +101,15 @@ label {
     }
     &__message {
         grid-area: d;
+        display: flex;
     }
+}
+
+.send-btn {
+    grid-area: e;
+    align-self: flex-end;
+    padding: .5rem 2rem;
+    color: $color-primary;
 }
 
 .error-message {
@@ -121,6 +117,43 @@ label {
     top: 4rem;
 }
 .err {
-    border: 3px solid rgba(255, 32, 32, 0.3);
+    border: 2px solid rgba(255, 32, 32, 0.466);
     box-shadow: 0 0 4px rgba(255, 32, 32, 0.3)
 }
+
+textarea {
+    resize: none;
+}
+.Modal {
+    
+        z-index: 200;
+        height: 20rem;
+        width: 30rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* right: 40px; */
+        /* bottom: 40px; */
+        border: 2px solid $color-primary-light;
+    background-color: $off-white;
+    border-radius: 4px;
+    color: $color-primary;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+        /* margin-right: -50%; */
+        transform: translate(-50%, -50%);
+
+   
+  }
+
+  .Overlay {
+    position: fixed;
+    z-index: 200;
+    // width: 20rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255,255, .4);
+  }

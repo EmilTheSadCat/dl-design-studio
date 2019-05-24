@@ -16,7 +16,7 @@ const ContactPage = () => {
     <header>
         <Navbar />
     </header>
-    <main className="contact margin-top-s">
+    <main className="contact margin-top-s" id="main-contact">
     <section className='contact__info'>
             <div className="contact-titles">
                 <h1 className="contact-titles__title">dl design</h1>
