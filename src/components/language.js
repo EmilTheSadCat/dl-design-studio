@@ -80,7 +80,36 @@ const language = {
             "contact-form-number": "tel",
             "contact-form-area": "W czym możemy pomóc?",
             "contact-form-submit": "Wyślij",
-            "contact-form-error-message": "Coś poszło nie tak. Zadzwnoń do nas lub napisz maila."
+            "contact-form-error-message": "Coś poszło nie tak. Zadzwnoń do nas lub napisz maila.",
+            "terms-titles-subtitle": "Warunki współpracy",
+            "terms-text-1": `Warunki :  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+             Possimus, earum? Voluptatem earum ad culpa eius facilis numquam ipsa veniam totam mollitia,
+              expedita nulla hic obcaecati voluptas omnis consequuntur fugiat! Corrupti.
+            Accusamus natus dolores nostrum modi voluptatum, consequatur soluta et nulla molestiae 
+            ut atque voluptatem ipsa incidunt. Dignissimos, optio, perferendis eum non et velit aut
+             vel libero ducimus aliquid impedit quam!
+            Ab, doloribus temporibus porro adipisci, quos perferendis beatae mollitia odio nesciunt,
+             nemo fugiat iste consectetur laudantium delectus maiores reiciendis quisquam quidem alias
+              voluptatum nostrum tempora! Aliquam atque accusantium neque iusto.
+            Dolorum et ipsum voluptas molestiae, quae eaque deserunt veniam maiores voluptate explicabo.
+             Eligendi eaque ea nobis mollitia officiis reiciendis impedit molestiae voluptas cupiditate, 
+             sint pariatur, excepturi, dicta neque. Delectus, tempore!
+            Sequi voluptatum maiores nesciunt nostrum a nisi quibusdam dolores tempore, cumque mollitia 
+            laboriosam, tempora, exercitationem at aspernatur saepe laudantium temporibus repellat minima et tenetur atque. Explicabo nisi eaque expedita in.
+            Similique, distinctio? Natus ut deleniti, eum dolorum itaque magni debitis ad. Id explicabo 
+            rerum quo alias, labore architecto, placeat eius dolores cupiditate aliquam dolorum sequi vitae, quidem ullam suscipit ipsam?
+            Pariatur fugiat voluptatibus aspernatur sed eligendi. Molestias nobis deleniti quas odit 
+            fugiat molestiae! Voluptatibus atque sequi, debitis exercitationem aliquid eius in consequatur, culpa architecto corporis suscipit nostrum ea dicta! Iusto?
+            Asperiores vitae odio impedit illo voluptas natus tempore sed, molestiae harum quam 
+            temporibus inventore totam, itaque possimus pariatur quaerat ut tempora rem quasi 
+            sunt dolore sequi. Quasi nostrum nihil quibusdam.
+            Cupiditate reprehenderit facilis saepe alias, blanditiis sapiente exercitationem 
+            non eveniet aliquid voluptas a ratione quam molestiae, delectus expedita ipsam dolorem 
+            accusantium impedit esse nobis voluptatibus veritatis eos nesciunt. Nobis, deserunt.
+            Reiciendis ipsa libero aliquam possimus at, mollitia magnam ea harum quo quaerat 
+            officia impedit assumenda tempora rem atque quia recusandae praesentium amet autem 
+            labore! Aperiam doloribus ullam exercitationem soluta fugiat.`,
+            "terms-text-2": "Coś..."
 
 
     },
@@ -160,7 +189,37 @@ const language = {
             "contact-form-number": "phone number",
             "contact-form-area": "How may we help you?",
             "contact-form-submit": "Send",
-            "contact-form-error-message": "Something went wrong. Please, write us an e-mail or call us."
+            "contact-form-error-message": "Something went wrong. Please, write us an e-mail or call us.",
+            "terms-titles-subtitle": "Terms of cooperation",
+            "terms-text-1": `Warunki :  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+             Possimus, earum? Voluptatem earum ad culpa eius facilis numquam ipsa veniam totam mollitia,
+              expedita nulla hic obcaecati voluptas omnis consequuntur fugiat! Corrupti.
+            Accusamus natus dolores nostrum modi voluptatum, consequatur soluta et nulla molestiae 
+            ut atque voluptatem ipsa incidunt. Dignissimos, optio, perferendis eum non et velit aut
+             vel libero ducimus aliquid impedit quam!
+            Ab, doloribus temporibus porro adipisci, quos perferendis beatae mollitia odio nesciunt,
+             nemo fugiat iste consectetur laudantium delectus maiores reiciendis quisquam quidem alias
+              voluptatum nostrum tempora! Aliquam atque accusantium neque iusto.
+            Dolorum et ipsum voluptas molestiae, quae eaque deserunt veniam maiores voluptate explicabo.
+             Eligendi eaque ea nobis mollitia officiis reiciendis impedit molestiae voluptas cupiditate, 
+             sint pariatur, excepturi, dicta neque. Delectus, tempore!
+            Sequi voluptatum maiores nesciunt nostrum a nisi quibusdam dolores tempore, cumque mollitia 
+            laboriosam, tempora, exercitationem at aspernatur saepe laudantium temporibus repellat minima et tenetur atque. Explicabo nisi eaque expedita in.
+            Similique, distinctio? Natus ut deleniti, eum dolorum itaque magni debitis ad. Id explicabo 
+            rerum quo alias, labore architecto, placeat eius dolores cupiditate aliquam dolorum sequi vitae, quidem ullam suscipit ipsam?
+            Pariatur fugiat voluptatibus aspernatur sed eligendi. Molestias nobis deleniti quas odit 
+            fugiat molestiae! Voluptatibus atque sequi, debitis exercitationem aliquid eius in consequatur, culpa architecto corporis suscipit nostrum ea dicta! Iusto?
+            Asperiores vitae odio impedit illo voluptas natus tempore sed, molestiae harum quam 
+            temporibus inventore totam, itaque possimus pariatur quaerat ut tempora rem quasi 
+            sunt dolore sequi. Quasi nostrum nihil quibusdam.
+            Cupiditate reprehenderit facilis saepe alias, blanditiis sapiente exercitationem 
+            non eveniet aliquid voluptas a ratione quam molestiae, delectus expedita ipsam dolorem 
+            accusantium impedit esse nobis voluptatibus veritatis eos nesciunt. Nobis, deserunt.
+            Reiciendis ipsa libero aliquam possimus at, mollitia magnam ea harum quo quaerat 
+            officia impedit assumenda tempora rem atque quia recusandae praesentium amet autem 
+            labore! Aperiam doloribus ullam exercitationem soluta fugiat.`,
+            "terms-text-2": "Something..."
+
     },
 }
 
